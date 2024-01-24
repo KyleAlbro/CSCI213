@@ -67,7 +67,6 @@
         </tbody>
     </table>
 
-
     <img src="huckleberryPie.jpg" alt="Huckleberry Pie">
     <img src="cinnamonRoll.jpg" alt="Cinnamon Rolls">
     <img src="pizzaSlices.jpg" alt="Pizza Slices">
