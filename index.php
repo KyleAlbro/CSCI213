@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul's Bakery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <h1>Paul's Bakery</h1>
-    <p>testing</p>
     <h2>Bakery Items</h2>
 
     <table border="1">
@@ -29,9 +29,19 @@
                 <td>$8.00</td>
             </tr>
             <tr>
-                <td>PLACEHOLDER</td>
-                <td>$2.00</td>
+                <td>Cinnamon Roll</td>
+                <td>$2.50</td>
             </tr>
+            <tr>
+                <td>Pizza Slices</td>
+                <td>$1.25/slice</td>
+            </tr>
+        </tbody>
+    </table>
+    <img src="huckleberryPie.jpg" alt="Huckleberry Pie">
+    <img src="cinnamonRoll.jpg" alt="Cinnamon Rolls">
+    <img src="pizzaSlices.jpg" alt="Pizza Slices">
+    <p>Basic description of the business.</p>
 </body>
 
 </html>
