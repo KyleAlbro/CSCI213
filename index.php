@@ -10,9 +10,8 @@
 
 <body>
     <h1>Paul's Bakery</h1>
-    <h2>Bakery Items</h2>
-
-    <table border="1">
+    <h2>Breakfast Items</h2>
+    <table id="breakfastTable" border="1">
         <thead>
             <tr>
                 <th>Item</th>
@@ -32,12 +31,43 @@
                 <td>Cinnamon Roll</td>
                 <td>$2.50</td>
             </tr>
+
+        </tbody>
+    </table>
+
+    <h2>Lunch Table</h2>
+    <table id="lunchTable" border="1">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td>Pizza Slices</td>
                 <td>$1.25/slice</td>
             </tr>
         </tbody>
     </table>
+
+    <h2>Dinner Table</h2>
+    <table id="dinnerTable" border="1">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pizza Slices</td>
+                <td>$1.25/slice</td>
+            </tr>
+        </tbody>
+    </table>
+
+
     <img src="huckleberryPie.jpg" alt="Huckleberry Pie">
     <img src="cinnamonRoll.jpg" alt="Cinnamon Rolls">
     <img src="pizzaSlices.jpg" alt="Pizza Slices">
