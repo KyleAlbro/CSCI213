@@ -1,0 +1,11 @@
+img{
+    max-width: 10%;
+    height: auto;
+}
+td{
+    padding: 10px;
+    text-align: left;
+}
+table{
+    font-size: 25px;
+}
