@@ -1,11 +1,60 @@
-img{
-    max-width: 10%;
-    height: auto;
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
-td{
+
+#rightImg{
+    float: right;
+    clear: right;
+}
+
+#leftImg{
+    float: left;
+    clear: left;
+}
+#contactInfo{
+    text-align: center;
+}
+
+td {
     padding: 10px;
     text-align: left;
 }
-table{
+
+table {
+    text-align: center;
     font-size: 20px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
 }
