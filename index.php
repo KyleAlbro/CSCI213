@@ -79,7 +79,7 @@
         </div>
 
         <div class="column">
-            <h2>Lunch Table</h2>
+            <h2>Lunch Items</h2>
             <table id="lunchTable" border="1">
                 <thead>
                     <tr>
@@ -105,7 +105,7 @@
         </div>
 
         <div class="column">
-            <h2>Dinner Table</h2>
+            <h2>Dinner Items</h2>
             <table id="dinnerTable" border="1">
                 <thead>
                     <tr>
