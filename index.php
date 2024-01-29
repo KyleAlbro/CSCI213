@@ -131,7 +131,7 @@
             <br>
             <img id="rightImg" src="pizzaSlices.jpg" alt="Pizza Slices">
             <br>
-            <img id="rightImg" src="huckleberryPie.jpg" alt="Huckleberry Pie">
+            <img id="rightImg" src="grilledCheese.jpg" alt="Grilled Cheese">
 
         </div>
     </section>
