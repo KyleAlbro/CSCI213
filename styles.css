@@ -4,16 +4,17 @@ img {
     object-fit: cover;
 }
 
-#rightImg{
+#rightImg {
     float: right;
     clear: right;
 }
 
-#leftImg{
+#leftImg {
     float: left;
     clear: left;
 }
-#contactInfo{
+
+#contactInfo {
     text-align: center;
 }
 
@@ -57,4 +58,24 @@ section {
     background-color: #ecf0f1;
     padding: 15px;
     border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:visited {
+    color: inherit;
+}
+
+#banner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2979db;
+    padding: 10px;
+    font-size: 25px;
+    color: #fff;
 }

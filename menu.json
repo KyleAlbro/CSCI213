@@ -1,0 +1,44 @@
+{
+    "breakfast": [
+        {
+            "item": "Homemade Rolls with Butter",
+            "price": "$1.50"
+        },
+        {
+            "item": "Cinnamon Roll",
+            "price": "$2.50"
+        },
+        {
+            "item": "Scrambled Eggs and Bacon",
+            "price": "$3.50"
+        }
+    ],
+    "lunch": [
+        {
+            "item":  "Pizza Slices",
+            "price": "$1.25/slice"
+        },
+        {
+            "item":  "Grilled Cheese",
+            "price": "$5.00"
+        },
+        {
+            "item": "BLT Sandwich",
+            "price": "$6.50"
+        }
+    ],
+    "dinner": [
+        {
+            "item":  "Pizza Slices",
+            "price": "$1.25/slice"
+        },
+        {
+            "item":  "Grilled Cheese",
+            "price": "$5.00"
+        },
+        {
+            "item": "BLT Sandwich",
+            "price": "$6.50"
+        }
+    ]
+}
