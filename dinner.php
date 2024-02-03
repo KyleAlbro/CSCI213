@@ -28,36 +28,14 @@
 
     $currentPage = basename($_SERVER['PHP_SELF'], '.php');
     $mealType = strtolower($currentPage);
-
-   
-
-
-    $dayOfWeek = date("1");
-    //to test if it works
-    //$dayOfWeek="Monday";
-
-    $specials = array(
-        "Monday" => "25% off sandwiches",
-        "Tuesday" => "Free breakfast roll with breakfast item",
-        "Wednesday" => "50% off Pizza slices with $5 order",
-        "Thursday" => "",
-        "Friday" => "25% off pies",
-        "Sunday" => "testing"
-    );
-
-    if (array_key_exists($dayOfWeek, $specials)) {
-        echo "<p>Special of the Day for $dayOfWeek: " . $specials[$dayOfWeek] . "</p>";
-    } else {
-        echo "<p>Sorry, no special today. Check back tomorrow!</p>";
-    }
     ?>
 
     <section>
         <div class="column">
             <br>
-            <img id="leftImg" src="images/cinnamonRoll.jpg" alt="Cinnamon Rolls">
+            <img id="leftImg" src="images/teriyakiBowl.jpg" alt="Teriyaki Glazed Salmon Bowl">
             <br>
-            <img id="leftImg" src="images/baconAndEggs.jpg" alt="Bacon and Eggs">
+            <img id="leftImg" src="images/lemonSalmon.jpg" alt="Grilled Salmon with Lemon Herb Sauce">
 
         </div>
 
@@ -67,24 +45,34 @@
             <?php
             if (isset($menuData[$mealType])) {
                 echo "<table border='1'>";
-                echo "<tr><th>Menu Item</th><th>Price</th></tr>";
-            
+                echo "
+                <tr>
+                <th>Menu Item</th>
+                <th>Price</th>
+                <th>Description</th>
+                </tr>";
+
                 foreach ($menuData[$mealType] as $menuItem) {
-                    echo "<tr><td>{$menuItem['item']}</td><td>{$menuItem['price']}</td></tr>";
+                    echo "
+                    <tr>
+                    <td>{$menuItem['item']}</td>
+                    <td>{$menuItem['price']}</td>
+                    <td>{$menuItem['description']}</td>
+                    </tr>";
                 }
-            
+
                 echo "</table>";
             } else {
                 echo "<p>Menu not available for this meal type.</p>";
             }
             ?>
-            </div>
+        </div>
 
         <div class="column">
             <br>
             <img id="rightImg" src="images/pizzaSlices.jpg" alt="Pizza Slices">
             <br>
-            <img id="rightImg" src="images/grilledCheese.jpg" alt="Grilled Cheese">
+            <img id="rightImg" src="images/glazedRibs.jpg" alt="BBQ Glazed Pork Chops">
 
         </div>
     </section>

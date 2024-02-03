@@ -2,43 +2,67 @@
     "breakfast": [
         {
             "item": "Homemade Rolls with Butter",
-            "price": "$1.50"
+            "price": "$1.50",
+            "description": "Freshly baked homemade rolls served warm, accompanied by a side of creamy butter. A delightful start to your meal!"
         },
         {
             "item": "Cinnamon Roll",
-            "price": "$2.50"
+            "price": "$2.50",
+            "description": "Indulge in the sweet and aromatic bliss of our freshly baked cinnamon roll. Soft layers of dough swirled with cinnamon sugar, topped with a luscious glaze."
         },
         {
             "item": "Scrambled Eggs and Bacon",
-            "price": "$3.50"
+            "price": "$3.50",
+            "description": "Fluffy scrambled eggs paired with crispy, savory bacon. A classic breakfast combination that's hearty and satisfying."
+        },
+        {
+            "item": "Avacado Toast",
+            "price": "$7.00",
+            "description": "Start your day right with our Avocado Toast Delight. Creamy avocado slices on perfectly toasted artisan bread, drizzled with extra virgin olive oil and topped with a sprinkle of red pepper flakes and a hint of lemon zest." 
         }
     ],
     "lunch": [
         {
             "item":  "Pizza Slices",
-            "price": "$1.25/slice"
+            "price": "$2.25/slice",
+            "description": "Dive into the perfect slice! Our pizzas feature a thin, crispy crust topped with a rich tomato sauce, gooey cheese, and your favorite toppings."
         },
         {
             "item":  "Grilled Cheese",
-            "price": "$5.00"
+            "price": "$5.00",
+            "description": "A timeless comfort classic! Melted cheese nestled between golden, buttery slices of grilled bread. Simple, delicious, and oh-so-satisfying."
         },
         {
             "item": "BLT Sandwich",
-            "price": "$6.50"
+            "price": "$6.50",
+            "description": "Experience the crunch and flavor of our BLT sandwich. Crispy bacon, juicy tomatoes, and crisp lettuce, perfectly layered between slices of fresh bread. A taste of perfection in every bite."
+        },
+        {
+            "item": "Southwest Chicken Wrap",
+            "price": "$13.00",
+            "description": "Spice up your lunch with our Southwest Chicken Wrap. Grilled chicken strips, black beans, corn, and crisp lettuce, wrapped in a soft tortilla and finished with a zesty chipotle ranch dressing."
         }
     ],
     "dinner": [
         {
             "item":  "Pizza Slices",
-            "price": "$1.25/slice"
+            "price": "$2.25/slice",
+            "description": "Dive into the perfect slice! Our pizzas feature a thin, crispy crust topped with a rich tomato sauce, gooey cheese, and your favorite toppings."
         },
         {
-            "item":  "Grilled Cheese",
-            "price": "$5.00"
+            "item":  "Teriyaki Glazed Salmon Bowl",
+            "price": "$19.00",
+            "description": "Experience the fusion of flavors in our Teriyaki Glazed Salmon Bowl. Grilled salmon glazed with a savory teriyaki sauce, served over a bed of jasmine rice and accompanied by stir-fried vegetables. A harmony of sweet and savory in every bite."
         },
         {
-            "item": "BLT Sandwich",
-            "price": "$6.50"
+            "item": "BBQ Glazed Pork Chops",
+            "price": "$15.50",
+            "description": "Savor the smoky goodness of our BBQ Glazed Pork Chops. Tender, juicy pork chops grilled to perfection and generously coated with a tangy barbecue glaze. Served with a side of grilled vegetables and garlic mashed potatoes for a hearty and satisfying meal."
+        },
+        {
+            "item": "Grilled Salmon with Lemon Herb Sauce",
+            "price": "$19.00",
+            "description": "Elevate your dinner experience with our Grilled Salmon. A perfectly grilled fillet served with a refreshing lemon herb sauce, accompanied by a medley of roasted vegetables and quinoa. A flavorful and healthy choice for your evening meal."
         }
     ]
 }

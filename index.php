@@ -53,22 +53,36 @@
 
     <section>
         <div class="column">
-            <br>
-            <img id="leftImg" src="images/cinnamonRoll.jpg" alt="Cinnamon Rolls">
-            <br>
-            <img id="leftImg" src="images/baconAndEggs.jpg" alt="Bacon and Eggs">
+            <h2>Popular Breakfast Items!</h2>
+            <div class="image-container">
+                <img src="images/cinnamonRoll.jpg" alt="Cinnamon Rolls">
+                <img src="images/baconAndEggs.jpg" alt="Bacon and Eggs">
+                <img src="images/rolls.jpg" alt="Homemade Rolls with Butter">
+                <img src="images/avocadoToast.jpg" alt="Avocado Toast">
+            </div>
 
         </div>
 
         <div class="column">
+
+            <h2>Popular Lunch Items!</h2>
+            <div class="image-container">
+                <img src="images/pizzaSlices.jpg" alt="Pizza Slices">
+                <img src="images/southWestWrap.jpg" alt="Southwest Chicken Wrap">
+                <img src="images/blt.jpg" alt="BLT Sandwich">
+                <img src="images/grilledCheese.jpg" alt="Grilled Cheese Sandwich">
+            </div>
+
         </div>
 
         <div class="column">
-            <br>
-            <img id="rightImg" src="images/pizzaSlices.jpg" alt="Pizza Slices">
-            <br>
-            <img id="rightImg" src="images/grilledCheese.jpg" alt="Grilled Cheese">
-
+            <h2>Popular Dinner Items!</h2>
+            <div class="image-container">
+                <img src="images/pizzaSlices.jpg" alt="Pizza Slices">
+                <img src="images/teriyakiBowl.jpg" alt="Teriyaki Glazed Salmon Bowl">
+                <img src="images/lemonSalmon.jpg" alt="Grilled Salmon with Lemon Herb Sauce">
+                <img src="images/glazedRibs.jpg" alt="BBQ Glazed Pork Chops">
+            </div>
         </div>
     </section>
     <p id="contactInfo">Contact us: <br>
