@@ -23,10 +23,14 @@
 
     <?php
 
+    //sets variable to json file
     $menuFile = 'menu.json';
+    //decodes json into php array
     $menuData = json_decode(file_get_contents($menuFile), true);
 
+    //gets filename of php script, strips php off the end then sets the result to $currentPage
     $currentPage = basename($_SERVER['PHP_SELF'], '.php');
+    //converts $currentPage to lowercase then is assigned to $mealType
     $mealType = strtolower($currentPage);
 
     ?>
