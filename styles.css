@@ -70,7 +70,7 @@ a:visited {
     color: inherit;
 }
 
-#banner{
+#banner {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -80,6 +80,26 @@ a:visited {
     color: #fff;
 }
 
-.image-container{
+.image-container {
     text-align: center;
+}
+
+
+.navigation-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* Change background color on hover */
+.navigation-button:hover {
+    background-color: #45a049;
 }

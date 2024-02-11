@@ -16,9 +16,9 @@
         <h1> <a id="h1" href="index.php">Paul's Bakery</a></h1>
     </header>
     <div id="banner">
-        <a href="breakfast.php">Breakfast Page</a>
-        <a href="lunch.php">Lunch Page</a>
-        <a href="dinner.php">Dinner Page</a>
+        <a href="breakfast.php" class="navigation-button">Breakfast Page</a>
+        <a href="lunch.php" class="navigation-button">Lunch Page</a>
+        <a href="dinner.php" class="navigation-button">Dinner Page</a>
     </div>
 
     <?php
