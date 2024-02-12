@@ -31,7 +31,7 @@
     </p>
 
     <?php
-    $dayOfWeek = date("1");
+    $dayOfWeek = date("l");
     //to test if it works
     //$dayOfWeek="Monday";
 
@@ -40,8 +40,7 @@
         "Tuesday" => "Free breakfast roll with breakfast item",
         "Wednesday" => "50% off Pizza slices with $5 order",
         "Thursday" => "",
-        "Friday" => "25% off pies",
-        "Sunday" => "testing"
+        "Friday" => "25% off pies"
     );
 
     if (array_key_exists($dayOfWeek, $specials)) {
