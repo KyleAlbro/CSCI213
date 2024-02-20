@@ -40,7 +40,7 @@
         "Tuesday" => "Free breakfast roll with breakfast item",
         "Wednesday" => "50% off Pizza slices with $5 order",
         "Thursday" => "",
-        "Friday" => "25% off pies"
+        "Friday" => "25% off dinner"
     );
 
     if (array_key_exists($dayOfWeek, $specials)) {
