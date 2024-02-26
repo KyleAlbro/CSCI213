@@ -103,3 +103,57 @@ a:visited {
 .navigation-button:hover {
     background-color: #45a049;
 }
+
+.loginButton{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+.loginButton:hover {
+    background-color: #45a049;
+}
+
+.welcomeMsg{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color:white;
+}
+
+.logoutButton{
+    position: fixed;
+    top: 45px;
+    right: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+.logoutButton:hover {
+    background-color: #45a049;
+}
+
+#login-Area{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    
+}
