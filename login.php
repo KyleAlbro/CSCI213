@@ -7,26 +7,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // In a real application, perform authentication against a database or other method
-    // For demonstration purposes, let's assume a simple username/password check
-    $valid_username = "kyle";
-    $valid_password = "p1";
+    // Check if the username exists in the session variable array
+    if (isset($_SESSION['user_accounts'][$username])) {
+        // Check if the submitted password matches the stored password
+        if ($_SESSION['user_accounts'][$username] == $password) {
+            // Authentication successful
+            // Set the username in the session variable
+            $_SESSION["username"] = $username;
 
-    // Check if the submitted username and password match the valid credentials
-    if ($username === $valid_username && $password === $valid_password) {
-        // Authentication successful
-        // Set the username in the session variable
-        $_SESSION["username"] = $username;
-
-        // Redirect to the home page or any other page after successful login
-        header("Location: index.php");
-        exit;
+            // Redirect to the home page or any other page after successful login
+            header("Location: index.php");
+            exit;
+        } else {
+            // Authentication failed: incorrect password
+            echo "Invalid password. Please try again.";
+        }
     } else {
-        // Authentication failed
-        echo "Invalid username or password. Please try again.";
+        // Authentication failed: username not found
+        echo "Invalid username. Please try again.";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
 </head>
 <body>
+    <!-- Login form to log into the user's account -->
     <h2>Login</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label for="username">Username:</label>
@@ -43,5 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
+    <a href="register.php">Don't have an account? Register here!</a>
 </body>
 </html>

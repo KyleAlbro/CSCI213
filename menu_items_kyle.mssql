@@ -1,0 +1,95 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 10.123.0.52:3306
+-- Generation Time: Feb 20, 2024 at 08:23 PM
+-- Server version: 8.0.30
+-- PHP Version: 7.0.33-0+deb9u12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `srobinett_cafe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_items`
+--
+
+CREATE TABLE `menu_items` (
+  `cafe_id` int NOT NULL,
+  `menu_id` int NOT NULL,
+  `menu_name` varchar(128) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `menu_descr` varchar(256) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `menu_price` float(10,2) NOT NULL,
+  `menu_meal` int DEFAULT NULL,
+  `menu_image_name` text COLLATE utf8mb3_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Dumping data for table `menu_items`
+--
+
+INSERT INTO `menu_items` (`cafe_id`, `menu_id`, `menu_name`, `menu_descr`, `menu_price`, `menu_meal`, `menu_image_name`) VALUES
+(4, 25, 'Homemade Rolls with Butter', 'Freshly baked homemade rolls served warm, accompanied by a side of creamy butter. A delightful start to your meal!\r\n', 1.50, 1, 'rolls.jpg'),
+(4, 26, 'Cinnamon Roll', 'Indulge in the sweet and aromatic bliss of our freshly baked cinnamon roll. Soft layers of dough swirled with cinnamon sugar, topped with a luscious glaze.', 2.50, 1, 'cannamonRoll.jpg'),
+(4, 27, 'Scrambled Eggs and Bacon', 'Fluffy scrambled eggs paired with crispy, savory bacon. A classic breakfast combination that\'s hearty and satisfying.', 3.50, 1, 'baconAndEggs.jpg'),
+(4, 28, 'Avacado Toast', 'Start your day right with our Avocado Toast Delight. Creamy avocado slices on perfectly toasted artisan bread, drizzled with extra virgin olive oil and topped with a sprinkle of red pepper flakes and a hint of lemon zest.', 7.00, 1, 'avocadoToast.jpg'),
+(4, 29, 'Pizza Slices', 'Dive into the perfect slice! Our pizzas feature a thin, crispy crust topped with a rich tomato sauce, gooey cheese, and your favorite toppings.', 2.25, 2, 'pizzaSlices.jpg'),
+(4, 30, 'Grilled Cheesee', 'A timeless comfort classic! Melted cheese nestled between golden, buttery slices of grilled bread. Simple, delicious, and oh-so-satisfying.', 5.00, 2, 'grilledCheese.jpg'),
+(4, 31, 'BLT Sandwich', 'Experience the crunch and flavor of our BLT sandwich. Crispy bacon, juicy tomatoes, and crisp lettuce, perfectly layered between slices of fresh bread. A taste of perfection in every bite.', 0.00, 2, 'blt.jpg'),
+(4, 32, 'Southwest Chicken Wrap', 'Spice up your lunch with our Southwest Chicken Wrap. Grilled chicken strips, black beans, corn, and crisp lettuce, wrapped in a soft tortilla and finished with a zesty chipotle ranch dressing.\r\n            ', 13.00, 2, 'southWestWrap.jpg'),
+(4, 33, 'Pizza Slices', 'Dive into the perfect slice! Our pizzas feature a thin, crispy crust topped with a rich tomato sauce, gooey cheese, and your favorite toppings.', 2.25, 3, 'pizzaSlices.jpg'),
+(4, 34, 'Teriyaki Glazed Salmon Bowl', 'Experience the fusion of flavors in our Teriyaki Glazed Salmon Bowl. Grilled salmon glazed with a savory teriyaki sauce, served over a bed of jasmine rice and accompanied by stir-fried vegetables. A harmony of sweet and savory in every bite.', 19.00, 3, 'teriyakiBowl.jpg'),
+(4, 35, 'BBQ Glazed Pork Chops', 'Savor the smoky goodness of our BBQ Glazed Pork Chops. Tender, juicy pork chops grilled to perfection and generously coated with a tangy barbecue glaze. Served with a side of grilled vegetables and garlic mashed potatoes for a hearty and satisfying meal.', 15.50, 3, 'glazedRibs.jpg'),
+(4, 36, 'Grilled Salmon with Lemon Herb Sauce', 'Elevate your dinner experience with our Grilled Salmon. A perfectly grilled fillet served with a refreshing lemon herb sauce, accompanied by a medley of roasted vegetables and quinoa. A flavorful and healthy choice for your evening meal.', 19.00, 3, 'lemonSalmon.jgp');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  ADD PRIMARY KEY (`menu_id`),
+  ADD KEY `cafe_fk` (`cafe_id`),
+  ADD KEY `meal_fk` (`menu_meal`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  MODIFY `menu_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  ADD CONSTRAINT `cafe_fk` FOREIGN KEY (`cafe_id`) REFERENCES `cafe` (`cafe_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `meal_fk` FOREIGN KEY (`menu_meal`) REFERENCES `meal` (`meal_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
