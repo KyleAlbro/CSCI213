@@ -2,12 +2,12 @@
 session_start();
 
 // Check if the user is logged in
-$loggedIn = isset($_SESSION["username"]);
+$loggedIn = isset($_SESSION["email"]);
 
 // If the user is logged in, display the welcome message and logout link
 if ($loggedIn) {
-    $username = $_SESSION["username"];
-    $loginAreaContent = "<p class=welcomeMsg>Welcome, $username</p><a href='logout.php' class=logoutButton>Logout</a>";
+    $email = $_SESSION["email"];
+    $loginAreaContent = "<p class=welcomeMsg>Welcome, $email</p><a href='logout.php' class=logoutButton>Logout</a>";
 } else {
     // If the user is not logged in, display a login link or message
     $loginAreaContent = "<a href='login.php' class=loginButton>Login</a>";
@@ -28,17 +28,12 @@ if ($loggedIn) {
 </head>
 
 <body>
-
-    
-
     <header>
         <h1> <a id="h1" href="index.php">Paul's Bakery</a></h1>
     </header>
     <div id="login-area">
         <?php echo $loginAreaContent; ?>
     </div>
-
-
 
     <div id="banner">
         <a href="breakfast.php" class="navigation-button">Breakfast Page</a>

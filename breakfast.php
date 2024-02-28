@@ -2,12 +2,12 @@
 session_start();
 
 // Check if the user is logged in
-$loggedIn = isset($_SESSION["username"]);
+$loggedIn = isset($_SESSION["email"]);
 
 // If the user is logged in, display the welcome message and logout link
 if ($loggedIn) {
-    $username = $_SESSION["username"];
-    $loginAreaContent = "<p class=welcomeMsg>Welcome, $username</p><a href='logout.php' class=logoutButton>Logout</a>";
+    $email = $_SESSION["email"];
+    $loginAreaContent = "<p class=welcomeMsg>Welcome, $email</p><a href='logout.php' class=logoutButton>Logout</a>";
 } else {
     // If the user is not logged in, display a login link or message
     $loginAreaContent = "<a href='login.php' class=loginButton>Login</a>";
@@ -64,32 +64,39 @@ if ($loggedIn) {
 
         <div class="column">
             <h2>Breakfast Items</h2>
-
             <?php
-            if (isset($menuData[$mealType])) {
-                echo "<table border='1'>";
-                echo "
+            $hostname = "localhost";
+            $user = "srobinett_cafe";
+            $passwd = "CSCI213!db";
+            $dbname = "srobinett_cafe";
+
+            $myConn = new mysqli($hostname, $user, $passwd, $dbname);
+
+            $result = $myConn->query("SELECT * from menu_items where cafe_id =4 and menu_meal = 1");
+
+            echo "<table border='1'>";
+            echo "
                 <tr>
                 <th>Menu Item</th>
                 <th>Price</th>
                 <th>Description</th>
                 </tr>";
 
-                foreach ($menuData[$mealType] as $menuItem) {
-                    echo "
-                    <tr>
-                    <td>{$menuItem['item']}</td>
-                    <td>{$menuItem['price']}</td>
-                    <td>{$menuItem['description']}</td>
-                    </tr>";
+            for ($i = 0; $i < 4; $i++) {
+                $row = $result->fetch_assoc();
+                if ($row) {
+                    echo "<tr>";
+                    echo "<td>" . $row['menu_name'] . "</td>";
+                    echo "<td>$" . $row['menu_price'] . "</td>";
+                    echo "<td>" . $row['menu_descr'] . "</td>";
+                    echo "</tr>";
+                } else {
+                    // If no more rows are available, break out of the loop
+                    break;
                 }
-
-                echo "</table>";
-            } else {
-                echo "<p>Menu not available for this meal type.</p>";
             }
+            echo "</table>";
             ?>
-
         </div>
 
         <div class="column">
@@ -97,7 +104,6 @@ if ($loggedIn) {
             <img id="rightImg" src="images/avocadoToast.jpg" alt="Avovado Toast">
             <br><br>
             <img id="rightImg" src="images/rolls.jpg" alt="Homemade Rolls with Butter">
-
         </div>
     </section>
     <p id="contactInfo">Contact us: <br>
