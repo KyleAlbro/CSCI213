@@ -1,0 +1,82 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 10.123.0.52:3306
+-- Generation Time: Feb 29, 2024 at 12:37 AM
+-- Server version: 8.0.30
+-- PHP Version: 7.0.33-0+deb9u12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `srobinett_cafe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `cust_id` int NOT NULL,
+  `cust_fname` varchar(32) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cust_lname` varchar(32) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cust_email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cust_passwd_hash` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`cust_id`, `cust_fname`, `cust_lname`, `cust_email`, `cust_passwd_hash`) VALUES
+(6, 'Aaron', 'Polaske', 'aaron.polaske@gmail.com', 'theQuickBrownFox'),
+(7, 'Kyle', 'Albro', 'kylea@gmail.com', '$2y$10$U0hqPPK5.sr7JvvaCBgAOOipajjW9k9B1yR7VacHoo2vPuH.UyIIW'),
+(8, '', '', '', ''),
+(9, 'Aaron', 'Polaske', 'Aaron@gmail.com', 'theQuickBrownFox'),
+(10, 'Aaron', 'Test', 'testemail@gmasil', '$2y$10$m36l8lpsaGNufWJxhrlckOZYaK8oGT2mjcFcEtcrhVtkJwQNezjKS'),
+(11, '', '', '', '$2y$10$rg4kXI3eG7AQAsfElbM9pemcpTrwXrEKVIDX0xD3gowDxIZ08jvoC'),
+(12, '', '', '', '$2y$10$wA0o4RM7zsF/AdmlZpA.n.q0uUJ3lYlY6qGbR1U4v7k2G.o6s5xay'),
+(13, '', '', '', '$2y$10$tmpOjcYJ36zIk4AcfFrfouFwJtDP5yemX2eL.xmbLoeJZSfxURU4i'),
+(14, 'Kyle', 'Albro', 'kylealbro@charter.net', '$2y$10$2i1YLNtsOWvxfczfvW7PUONoGxKDCnUvpuCxJmDvh/BupGk8L9t6W'),
+(15, 'Kyle', 'Albro', 'kylealbro@charter.net', '$2y$10$KkIts9fXo0arxHXMVIes8Oom5Vmn38IX0Arpnqr3VucB3U3/Fg8XC'),
+(16, '', '', '', '$2y$10$BdBEP.J3rf7sGObHW7SjP.cB/GYrolqM0Te0Nd4IhvF.APnFJ6/Uq'),
+(17, 'Kyle', 'Albro', 'kylealbro@charter.net', '$2y$10$y.RLJqmory/ug1TX496mS./uGe7az2fJeTNcX34vBL4ut/oRzzlEG'),
+(18, 'Kyle', 'Albro', 'kylealbro@charter.net', '$2y$10$Ej9vn0q9FQS9OG0szIPIvuCNnvZEks9HTE/AOt9sytRdbnzoKHhuW'),
+(19, 'Kyle', 'Albro', 'kylealbro@charter.net', '$2y$10$Hl.ooGDrnv9zzwAtGMBCDu46ecdYc8kiqA.iHS.vhTDwc0QeXMW7G');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`cust_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `cust_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
