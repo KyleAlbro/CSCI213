@@ -50,15 +50,7 @@ if ($loggedIn) {
 
     <section>
         <div class="column">
-            <br>
-            <img id="leftImg" src="images/teriyakiBowl.jpg" alt="Teriyaki Glazed Salmon Bowl">
-            <br>
-            <img id="leftImg" src="images/lemonSalmon.jpg" alt="Grilled Salmon with Lemon Herb Sauce">
 
-        </div>
-
-        <div class="column">
-            <h2>Dinner Items</h2>
             <?php
             $hostname = "localhost";
             $user = "srobinett_cafe";
@@ -67,7 +59,22 @@ if ($loggedIn) {
 
             $myConn = new mysqli($hostname, $user, $passwd, $dbname);
 
-            $result = $myConn->query("SELECT * from menu_items where cafe_id =4 and menu_meal = 3");
+            echo "<br>";
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 3");
+            $row = $result->fetch_assoc();
+
+            echo "<img id='leftImg' src='images/" . $row['menu_image_name'] . "' alt='Pizza Slices'>";
+            echo "<br>";
+            $row = $result->fetch_assoc();
+
+            echo "<img id='leftImg' src='images/" . $row['menu_image_name'] . "' alt='Teriyaki Glazed Salmon'>";
+            ?>
+        </div>
+
+        <div class="column">
+            <h2>Dinner Items</h2>
+            <?php
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 3");
 
             echo "<table border='1'>";
             echo "
@@ -95,10 +102,18 @@ if ($loggedIn) {
         </div>
 
         <div class="column">
-            <br>
-            <img id="rightImg" src="images/pizzaSlices.jpg" alt="Pizza Slices">
-            <br>
-            <img id="rightImg" src="images/glazedRibs.jpg" alt="BBQ Glazed Pork Chops">
+
+            <?php
+            echo "<br>";
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 3 ORDER BY menu_id desc limit 2");
+            $row = $result->fetch_assoc();
+
+            echo "<img id='rightImg' src='images/" . $row['menu_image_name'] . "' alt='Grilled Salmon'>";
+            echo "<br>";
+
+            $row = $result->fetch_assoc();
+            echo "<img id='rightImg' src='images/" . $row['menu_image_name'] . "' alt='BBQ Glazed Pork'>";
+            ?>
 
         </div>
     </section>

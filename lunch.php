@@ -50,16 +50,6 @@ if ($loggedIn) {
 
     <section>
         <div class="column">
-            <br>
-            <img id="leftImg" src="images/blt.jpg" alt="BLT Sandwich">
-            <br>
-            <img id="leftImg" src="images/southWestWrap.jpg" alt="Southwest Chicken Wrap">
-
-        </div>
-
-        <div class="column">
-            <h2>Lunch Items</h2>
-
             <?php
             $hostname = "localhost";
             $user = "srobinett_cafe";
@@ -67,6 +57,25 @@ if ($loggedIn) {
             $dbname = "srobinett_cafe";
 
             $myConn = new mysqli($hostname, $user, $passwd, $dbname);
+
+            echo "<br>";
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 2");
+            $row = $result->fetch_assoc();
+
+            echo "<img id='leftImg' src='images/" . $row['menu_image_name'] . "' alt='Pizza Slices'>";
+            echo "<br>";
+            $row = $result->fetch_assoc();
+
+            echo "<img id='leftImg' src='images/" . $row['menu_image_name'] . "' alt='Grilled Cheese'>";
+            ?>
+
+        </div>
+
+        <div class="column">
+            <h2>Lunch Items</h2>
+
+            <?php
+
 
             $result = $myConn->query("SELECT * from menu_items where cafe_id =4 and menu_meal = 2");
 
@@ -96,10 +105,17 @@ if ($loggedIn) {
         </div>
 
         <div class="column">
-            <br>
-            <img id="rightImg" src="images/pizzaSlices.jpg" alt="Pizza Slices">
-            <br>
-            <img id="rightImg" src="images/grilledCheese.jpg" alt="Grilled Cheese">
+            <?php
+            echo "<br>";
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 2 ORDER BY menu_id desc limit 2");
+            $row = $result->fetch_assoc();
+
+            echo "<img id='rightImg' src='images/" . $row['menu_image_name'] . "' alt='Chicken Wrap'>";
+            echo "<br>";
+
+            $row = $result->fetch_assoc();
+            echo "<img id='rightImg' src='images/" . $row['menu_image_name'] . "' alt='BLT Sandwich'>";
+            ?>
 
         </div>
     </section>

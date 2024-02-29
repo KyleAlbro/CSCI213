@@ -50,13 +50,15 @@ if ($loggedIn) {
     </p>
 
     <?php
+
+
     $dayOfWeek = date("l");
 
     $specials = array(
         "Monday" => "25% off sandwiches",
         "Tuesday" => "Free breakfast roll with breakfast item",
         "Wednesday" => "50% off Pizza slices with $5 order",
-        "Thursday" => "",
+        "Thursday" => "15% off childrens meals",
         "Friday" => "25% off dinner"
     );
 
@@ -70,34 +72,68 @@ if ($loggedIn) {
     <section>
         <div class="column">
             <h2>Popular Breakfast Items!</h2>
-            <div class="image-container">
-                <img src="images/cinnamonRoll.jpg" alt="Cinnamon Rolls">
-                <img src="images/baconAndEggs.jpg" alt="Bacon and Eggs">
-                <img src="images/rolls.jpg" alt="Homemade Rolls with Butter">
-                <img src="images/avocadoToast.jpg" alt="Avocado Toast">
-            </div>
+            <?php
+            $hostname = "localhost";
+            $user = "srobinett_cafe";
+            $passwd = "CSCI213!db";
+            $dbname = "srobinett_cafe";
+
+
+
+            echo "<div class='image-container'>";
+            $myConn = new mysqli($hostname, $user, $passwd, $dbname);
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 1");
+            for ($i = 0; $i < 4; $i++) {
+                $row = $result->fetch_assoc();
+                if ($row) {
+                    echo "<img src='images/" . $row['menu_image_name'] . "' alt='Menu Image'>";
+                } else {
+                    // If no more rows are available, break out of the loop
+                    break;
+                }
+            }
+            echo "</div>";
+            ?>
 
         </div>
 
         <div class="column">
 
             <h2>Popular Lunch Items!</h2>
-            <div class="image-container">
-                <img src="images/pizzaSlices.jpg" alt="Pizza Slices">
-                <img src="images/southWestWrap.jpg" alt="Southwest Chicken Wrap">
-                <img src="images/blt.jpg" alt="BLT Sandwich">
-                <img src="images/grilledCheese.jpg" alt="Grilled Cheese Sandwich">
-            </div>
+            <?php
+            echo "<div class='image-container'>";
+            $myConn = new mysqli($hostname, $user, $passwd, $dbname);
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 2");
+            for ($i = 0; $i < 4; $i++) {
+                $row = $result->fetch_assoc();
+                if ($row) {
+                    echo "<img src='images/" . $row['menu_image_name'] . "' alt='Menu Image'>";
+                } else {
+                    // If no more rows are available, break out of the loop
+                    break;
+                }
+            }
+            echo "</div>";
+            ?>
         </div>
 
         <div class="column">
             <h2>Popular Dinner Items!</h2>
-            <div class="image-container">
-                <img src="images/pizzaSlices.jpg" alt="Pizza Slices">
-                <img src="images/teriyakiBowl.jpg" alt="Teriyaki Glazed Salmon Bowl">
-                <img src="images/lemonSalmon.jpg" alt="Grilled Salmon with Lemon Herb Sauce">
-                <img src="images/glazedRibs.jpg" alt="BBQ Glazed Pork Chops">
-            </div>
+            <?php
+            echo "<div class='image-container'>";
+            $myConn = new mysqli($hostname, $user, $passwd, $dbname);
+            $result = $myConn->query("SELECT * FROM menu_items WHERE cafe_id = 4 AND menu_meal = 3");
+            for ($i = 0; $i < 4; $i++) {
+                $row = $result->fetch_assoc();
+                if ($row) {
+                    echo "<img src='images/" . $row['menu_image_name'] . "' alt='Menu Image'>";
+                } else {
+                    // If no more rows are available, break out of the loop
+                    break;
+                }
+            }
+            echo "</div>";
+            ?>
         </div>
     </section>
     <p id="contactInfo">Contact us: <br>
