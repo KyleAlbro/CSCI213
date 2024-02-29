@@ -1,30 +1,34 @@
 <?php
 session_start();
 
-// Check if the form is submitted
+$hostname = "localhost";
+$user = "srobinett_cafe";
+$passwd = "CSCI213!db";
+$dbname = "srobinett_cafe";
+
+$myConn = new mysqli($hostname, $user, $passwd, $dbname);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the email and password from the form data
     $email = $_POST["email"];
     $password = $_POST["password"];
+    $hashed_passwd = password_hash($passwd, PASSWORD_DEFAULT);
 
-    // Check if the email exists in the session variable array
-    if (isset($_SESSION['user_accounts'][$email])) {
-        // Check if the submitted password matches the stored password
-        if ($_SESSION['user_accounts'][$email] == $password) {
-            // Authentication successful
-            // Set the email in the session variable
+    $sql = "SELECT * FROM customer WHERE cust_email='$email'";
+
+    echo"$sql <br>";
+
+    $result = mysqli_query($myConn, $sql);
+    
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row['password'])) {
             $_SESSION["email"] = $email;
-
-            // Redirect to the home page or any other page after successful login
-            echo "Account creation successful. You will be redirected to the login page shortly.";
-            echo "<script>setTimeout(function() { window.location.href = 'index.php'; }, 3000);</script>";
+            header("Location: index.php");
             exit;
         } else {
-            // Authentication failed: incorrect password
             echo "Invalid password. Please try again.";
         }
     } else {
-        // Authentication failed: email not found
         echo "Invalid email. Please try again.";
     }
 }
@@ -50,6 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Login">
     </form>
     <a href="register.php">Don't have an account? Register here!</a>
+
+    <?php
+    
+
+
+    ?>
+
 </body>
 
 </html>
