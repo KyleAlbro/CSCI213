@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_passwd = password_hash($password, PASSWORD_DEFAULT);
 
     // Use a case-insensitive comparison for the email
-    $sql = "SELECT cust_email, cust_passwd_hash FROM customer WHERE LOWER(cust_email) = LOWER('$email')";
+    $sql = "SELECT * FROM customer WHERE LOWER(cust_email) = LOWER('$email')";
     $result = mysqli_query($myConn, $sql);
 
     if (mysqli_num_rows($result) == 1) {
