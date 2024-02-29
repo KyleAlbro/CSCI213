@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]); // Trim whitespace from the email
     $password = $_POST["password"];
 
-    // Hash the provided password
-    $hashed_passwd = password_hash($password, PASSWORD_DEFAULT);
+    // dont do this here. do this in register only!
+    //$hashed_passwd = password_hash($password, PASSWORD_DEFAULT);
 
     // Use a case-insensitive comparison for the email
     $sql = "SELECT * FROM customer WHERE LOWER(cust_email) = LOWER('$email')";
@@ -22,12 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         // Verify the hashed password
-        if (password_verify($hashed_passwd, $row['cust_passwd_hash'])) {
+        if (password_verify($password, $row['cust_passwd_hash'])=== TRUE) {
             $_SESSION["email"] = $email;
             header("Location: index.php");
             exit;
         } else {
-            echo "Invalid password. Please try again.";
+            echo "$password Invalid password. Please try again.";
+            echo $row['cust_passwd_hash'];
         }
     } else {
         echo "Invalid email. Please try again.";

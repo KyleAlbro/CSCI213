@@ -21,6 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashed_passwd = password_hash($passwd, PASSWORD_DEFAULT);
     $sql = "INSERT INTO customer (cust_id, cust_fname, cust_lname, cust_email, cust_passwd_hash) VALUES(null, '$fname', '$lname', '$email', '$hashed_passwd')";
+    if ($myConn->query($sql) === TRUE) {
+        echo "New record created successfully <br>";
+    } else {
+        echo "Error: ", $sql . "<br>" . $conn->error;
+    }
     //$sql = "INSERT INTO customer (cust_id, cust_fname, cust_lname, cust_email, cust_passwd_hash) VALUES(null, '$fname', '$lname', '$email', '$password')";
 
     //testing if it inserts
